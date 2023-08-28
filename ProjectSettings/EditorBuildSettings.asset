@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/UI Scenes/MainUI Scenes/mainUI.unity
+    guid: b538e7004d032eb4e8ab6584ebe62aa9
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/Scene1.unity
+    guid: e0b81b13ff4f27444b7f1c61c6cae929
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Active Minigames/Polyrun/Scenes/PolyRun.unity
+    guid: 50c973c99b768c340a7d6533f6aed0af
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Active Minigames/DoctorWorm/Scenes/Level1.unity
+    guid: fe9c70ae84d61754c809783afbd641fb
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Active Minigames/DoctorWorm/Scenes/Level2.unity
+    guid: 70d451264f87f5d498d1ae527502c53d
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Active Minigames/DoctorWorm/Scenes/Level3.unity
+    guid: 504963c54a5ce6541a620aec32eea829
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Active Minigames/Sulky Slimes/Scenes/SulkySlimes
+      Level1.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Active Minigames/Sulky Slimes/Scenes/Level2.unity
+    guid: c9e8f7f97e95b534095df0a45e974f35
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/UI Scenes/win.unity
+    guid: 24a5313646e17cb47b6dc88ee7a7bbfc
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/UI Scenes/MainUI Scenes/Instructions.unity
+    guid: 8a088ad7a340def43b3c06326a30724f
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/UI Scenes/MainUI Scenes/Credits.unity
+    guid: caa822053394a0b4dbbec1d36be25ef1
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/Minigame Instructions/Polyrun Instructions.unity
+    guid: d8a338129c8897a44aa6074e9cd23c50
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/Minigame Instructions/Dr Worm 1.unity
+    guid: 41c7b34c71ab77f48a08624e7ec7dafc
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/Minigame Instructions/Dr Worm 2.unity
+    guid: b20ec6683a0fa834b9bb36169cff97a9
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/Minigame Instructions/Dr Worm 3.unity
+    guid: e4e81a855bde8a2468736e4d0217c84a
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/Minigame Instructions/SulkySlimes1.unity
+    guid: 068d1788ca9e0904489a05b9c211ebaf
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/Minigame Instructions/SulkySlimes2.unity
+    guid: 85ff22c43d51bb04d97664f75bbc4c40
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/UI Scenes/MainUI Scenes/leaderboard.unity
+    guid: 0a466322024212c459317c0c7de40f94
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/UI Scenes/MainUI Scenes/UserAuth.unity
+    guid: 3382078f627b6aa41ad1f9c816ded56c
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/UI Scenes/MainUI Scenes/mainUI2.unity
+    guid: 42f79bfdc68d465429d0d6d87f655349
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/UI Scenes/MainUI Scenes/avatarSystem.unity
+    guid: d0fcdb4c905fc83479d0b1f5b6b34e89
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/UI Scenes/MainUI Scenes/Messages.unity
+    guid: d4a847e1a26d2e54a8513be6c0ad1360
+  m_configObjects: {}
