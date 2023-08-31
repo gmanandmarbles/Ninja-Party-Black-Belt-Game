@@ -83,7 +83,7 @@ public class HGGAPI : MonoBehaviour
     public IEnumerator RegisterUser(UserRegistrationData userData, Action<string> callback)
     {
         string jsonData = JsonUtility.ToJson(userData);
-        using (UnityWebRequest www = UnityWebRequest.Post(baseUrl + "/api/users", jsonData))
+        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(baseUrl + "/api/users", jsonData))
         {
             www.SetRequestHeader("Content-Type", "application/json");
 
@@ -104,7 +104,7 @@ public class HGGAPI : MonoBehaviour
     public IEnumerator LoginUser(UserLoginData loginData, Action<string> callback)
     {
         string jsonData = JsonUtility.ToJson(loginData);
-        using (UnityWebRequest www = UnityWebRequest.Post(baseUrl + "/api/login", jsonData))
+        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(baseUrl + "/api/login", jsonData))
         {
             www.SetRequestHeader("Content-Type", "application/json");
 
@@ -163,7 +163,7 @@ public class HGGAPI : MonoBehaviour
     {
         MissionPlayerData data = new MissionPlayerData { missionId = missionId, playerId = playerId };
         string jsonData = JsonUtility.ToJson(data);
-        using (UnityWebRequest www = UnityWebRequest.Post(baseUrl + "/api/addmission", jsonData))
+        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(baseUrl + "/api/addmission", jsonData))
         {
             www.SetRequestHeader("Content-Type", "application/json");
 
@@ -185,7 +185,7 @@ public class HGGAPI : MonoBehaviour
     {
         MissionPlayerData data = new MissionPlayerData { missionId = missionId, playerId = playerId };
         string jsonData = JsonUtility.ToJson(data);
-        using (UnityWebRequest www = UnityWebRequest.Post(baseUrl + "/api/completemission", jsonData))
+        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(baseUrl + "/api/completemission", jsonData))
         {
             www.SetRequestHeader("Content-Type", "application/json");
 
@@ -206,7 +206,7 @@ public class HGGAPI : MonoBehaviour
     public IEnumerator AddNewMission(Mission newMission, Action<Mission> callback)
     {
         string jsonData = JsonUtility.ToJson(newMission);
-        using (UnityWebRequest www = UnityWebRequest.Post(baseUrl + "/api/missions", jsonData))
+        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(baseUrl + "/api/missions", jsonData))
         {
             www.SetRequestHeader("Content-Type", "application/json");
 
@@ -227,7 +227,7 @@ public class HGGAPI : MonoBehaviour
     public IEnumerator UpdateLeaderboards(List<LeaderboardEntry> entries, Action<string> callback)
     {
         string jsonData = JsonUtility.ToJson(entries);
-        using (UnityWebRequest www = UnityWebRequest.Post(baseUrl + "/api/leaderboards", jsonData))
+        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(baseUrl + "/api/leaderboards", jsonData))
         {
             www.SetRequestHeader("Content-Type", "application/json");
 
@@ -248,7 +248,7 @@ public class HGGAPI : MonoBehaviour
     public IEnumerator AddUpcomingMission(Mission newMission, Action<Mission> callback)
     {
         string jsonData = JsonUtility.ToJson(newMission);
-        using (UnityWebRequest www = UnityWebRequest.Post(baseUrl + "/api/upcoming-missions", jsonData))
+        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(baseUrl + "/api/upcoming-missions", jsonData))
         {
             www.SetRequestHeader("Content-Type", "application/json");
 
