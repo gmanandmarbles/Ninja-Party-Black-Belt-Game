@@ -1,7 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
-using LootLocker.Requests;
+using UnityEngine.Networking;
 using System.Collections;
+
+[System.Serializable]
+public class Message
+{
+    public string title;
+    public string body;
+}
+
+[System.Serializable]
+public class MessagesResponse
+{
+    public bool success;
+    public Message[] messages;
+}
 
 public class messageSystem : MonoBehaviour
 {
@@ -13,38 +27,47 @@ public class messageSystem : MonoBehaviour
         titleBox.text = title;
         textBox.text = messageRaw;
     }
-    
 
-    public void checkForMessages()
+    public void CheckForMessages()
     {
-        LootLockerSDKManager.GetMessages((response) =>
+        StartCoroutine(GetMessagesFromAPI());
+    }
+
+    IEnumerator GetMessagesFromAPI()
+    {
+        string apiUrl = "https://api.hungrygiraffe.xyz/api/messages";
+
+        UnityWebRequest www = UnityWebRequest.Get(apiUrl);
+        yield return www.SendWebRequest();
+
+        if (www.result == UnityWebRequest.Result.Success)
         {
-            if (response.success)
+            string responseJson = www.downloadHandler.text;
+            
+            // Parse the JSON response using JsonUtility
+            MessagesResponse responseData = JsonUtility.FromJson<MessagesResponse>(responseJson);
+
+            if (responseData.success && responseData.messages.Length > 0)
             {
-                Debug.Log("Successfully retrieved messages");
-                if (response.messages != null && response.messages.Length > 0)
-                {
-                    string rawMessage = response.messages[0].body;
-                    string title = response.messages[0].title;
-                    DisplayMessage(title, rawMessage);
-                }
+                string rawMessage = responseData.messages[0].body;
+                string title = responseData.messages[0].title;
+                DisplayMessage(title, rawMessage);
             }
-            else
-            {
-                Debug.Log("Error retrieving messages");
-            }
-        });
+        }
+        else
+        {
+            Debug.LogError("Error retrieving messages: " + www.error);
+        }
     }
 
     void Start()
     {
-        StartCoroutine(passiveMe(2));
+        StartCoroutine(PassiveMe(2));
     }
 
-
-    IEnumerator passiveMe(int secs)
+    IEnumerator PassiveMe(int secs)
     {
         yield return new WaitForSeconds(secs);
-        checkForMessages();
+        CheckForMessages();
     }
 }
